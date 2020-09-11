@@ -1,0 +1,597 @@
+@import url("css1.css");/*https://fonts.googleapis.com/css?family=Raleway:300,400*/
+@import url("css2.css");/*https://fonts.googleapis.com/css?family=Montserrat:700*/
+* {
+  transition: 0.4s ease;
+}
+a{color:inherit;}
+body {
+  background-color: #e5e9e9;
+  font-size: 22px;
+  line-height: 28px;
+  letter-spacing: 4px;
+  font-family: "Raleway";
+  font-weight: 400;
+}
+.fixed-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-height: 100px;
+  padding: 0 25px;
+  box-sizing: border-box;
+  background-color: rgba(255,255,255,0.02);
+  box-shadow: 0 0 15px 2px rgba(0,0,0,0.5);
+  z-index: 100;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transition: 0.35s ease;
+}
+.fixed-nav-bar .logo {
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  text-transform: uppercase;
+  color: #ccc;
+  font-size: 28px;
+  font-weight: 300;
+  cursor: pointer;
+}
+.fixed-nav-bar .logo span {
+  color: #e78533;
+  font-weight: 600;
+}
+.fixed-nav-bar.scrolled {
+  min-height: 60px;
+  background-color: #fdfdfd;
+  box-shadow: 0 0 30px 3px rgba(0,0,0,0.6);
+}
+.fixed-nav-bar.scrolled .logo {
+  color: #000;
+}
+.fixed-nav-bar.scrolled .menu-button-label .white-bar {
+  background-color: #000;
+}
+.drop-down-container {
+  height: 15%;
+  width: 90%;
+  left: 160%;
+  margin-top: 5px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  transition: 0.3s ease;
+}
+.drop-down-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 8px;
+  bottom: 0;
+  background-color: #222;
+}
+.drop-down-item:before {
+  content: "";
+  position: absolute;
+  right: -8px;
+  height: 100%;
+  width: 8px;
+  transition: 0.25s ease;
+  background: linear-gradient(to left, #e78533 50%, #222 50%);
+  background-size: 200% 100%;
+  background-position: left;
+}
+.drop-down-item:hover::before {
+  background-position: right;
+}
+.the-bass {
+  position: fixed;
+  height: 0px;
+  width: 360px;
+  right: 0;
+  top: 100px;
+  background-color: rgba(0,0,0,0.7);
+  transition: 0.35s ease, height 0.35s 0.3s ease;
+  z-index: 90;
+}
+.the-bass.scrolled {
+  top: 60px;
+}
+.the-bass.dropped {
+  height: 20vh;
+  font-size: 25px;
+  color:white;
+  transition: 0.35s ease;
+}
+.the-bass.dropped .drop-down-container {
+  left: 50%;
+}
+.the-bass.dropped .drop-down-container:nth-child(1) {
+  transition: 0.3s ease, left 0.4s 0.4s ease;
+}
+
+.menu-button-label {
+  position: absolute;
+  height: 48px;
+  width: 48px;
+  top: 50%;
+  right: 25px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  transition: 0.4s ease;
+}
+.menu-button-label .white-bar {
+  position: absolute;
+  height: 2px;
+  width: 66%;
+  background-color: #ccc;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  transition: 0.4s ease, width 0.3s ease;
+}
+.menu-button-label .white-bar:nth-child(1) {
+  top: 24%;
+}
+.menu-button-label .white-bar:nth-child(2),
+.menu-button-label .white-bar:nth-child(3) {
+  top: 47%;
+}
+.menu-button-label .white-bar:nth-child(4) {
+  top: 71%;
+}
+#menuButton {
+  display: none;
+}
+#menuButton:checked+ .menu-button-label .white-bar:nth-child(1),
+#menuButton:checked+ .menu-button-label .white-bar:nth-child(4) {
+  width: 0%;
+}
+#menuButton:checked+ .menu-button-label .white-bar:nth-child(2) {
+  -webkit-transform: translateX(-50%) rotate(45deg);
+          transform: translateX(-50%) rotate(45deg);
+}
+#menuButton:checked+ .menu-button-label .white-bar:nth-child(3) {
+  -webkit-transform: translateX(-50%) rotate(-45deg);
+          transform: translateX(-50%) rotate(-45deg);
+}
+.rela-block {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.cover-before::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.deer-section {
+  min-height: 800px;
+  background: url("deer.jpg") no-repeat center;/*https://40.media.tumblr.com/c51b58b12eea0fdb6ef1322c8c6089fb/tumblr_mo4hnpJ1D51r20af2o1_500.jpg*/
+  background-size: 424px 600px;
+  background-color: #1a1a1a;
+  box-shadow: 0 5px 20px 2px rgba(0,0,0,0.7);
+  z-index: 5;
+}
+.second-section {
+  min-height: 600px;
+  background: url("") no-repeat center; /*http://avvs.co/wp-content/uploads/2015/11/white-washed-wood-furniture-minimalist-decor-on-white-design-ideas.jpg*/
+  background-size: cover;
+}
+.second-section::before {
+  background-color: rgba(255,255,255,0.88);
+}
+.big-floaty-image {
+  position: relative;
+  margin: 100px auto;
+  height: 540px;
+  width: 90%;
+  max-width: 960px;
+  background: url("sun.jpg") fixed center;/*http://www.pixelstalk.net/wp-content/uploads/2016/05/Hipster-Wallpapers-High-Quality-Free-Download.jpg*/
+  background-size: 960px 1080px;
+  box-shadow: 8px 9px 25px 2px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+.absolute-center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 90%;
+  color: #fff;
+  text-align: center;
+  font-size: 44px;
+  font-weight: 300;
+  line-height: 52px;
+  letter-spacing: 10px;
+}
+.third-section {
+  min-height: 500px;
+  background: url("techwork.jpg") fixed center;/*https://4.bp.blogspot.com/-1UHmmr4AumQ/T-QwGJwJduI/AAAAAAAAKRE/6Vgq1WmrEzM/s1600/photoshops+(81).jpg*/
+  background-size: cover;
+}
+.third-section::before {
+  background-color: rgba(0,0,0,0.5);
+}
+.fourth-section {
+  min-height: 800px;
+}
+.hover-pointer {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  text-align: left;
+  width: 90%;
+  max-width: 500px;
+}
+.color-square-container {
+  height: 200px;
+  width: 200px;
+  margin: 80px auto 40px;
+  border: 1px solid #000;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  filter: blur(10px);
+  -webkit-filter: blur(20px);
+  overflow: hidden;
+  -webkit-animation: spinnerooni 5.8s 1s infinite;
+          animation: spinnerooni 5.8s 1s infinite;
+}
+.color-square-container:hover {
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
+}
+.changing{-webkit-animation: colorChange 1.5s infinite alternate linear;
+        animation: colorChange 1.5s infinite alternate linear;}
+.color-changing-square {
+  display: inline-block;
+  position: relative;
+  float: left;
+  height: 20%;
+  width: 20%;
+  background-color: #e91e63;
+  box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-animation: colorChange 1.5s infinite alternate linear;
+          animation: colorChange 1.5s infinite alternate linear;
+}
+.color-changing-square:nth-child(1) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+.color-changing-square:nth-child(2) {
+  -webkit-animation-delay: 0.025s;
+          animation-delay: 0.025s;
+}
+.color-changing-square:nth-child(3) {
+  -webkit-animation-delay: 0.05s;
+          animation-delay: 0.05s;
+}
+.color-changing-square:nth-child(4) {
+  -webkit-animation-delay: 0.075s;
+          animation-delay: 0.075s;
+}
+.color-changing-square:nth-child(5) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+.color-changing-square:nth-child(6) {
+  -webkit-animation-delay: 0.125s;
+          animation-delay: 0.125s;
+}
+.color-changing-square:nth-child(7) {
+  -webkit-animation-delay: 0.15s;
+          animation-delay: 0.15s;
+}
+.color-changing-square:nth-child(8) {
+  -webkit-animation-delay: 0.175s;
+          animation-delay: 0.175s;
+}
+.color-changing-square:nth-child(9) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+.color-changing-square:nth-child(10) {
+  -webkit-animation-delay: 0.225s;
+          animation-delay: 0.225s;
+}
+.color-changing-square:nth-child(11) {
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+.color-changing-square:nth-child(12) {
+  -webkit-animation-delay: 0.275s;
+          animation-delay: 0.275s;
+}
+.color-changing-square:nth-child(13) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+.color-changing-square:nth-child(14) {
+  -webkit-animation-delay: 0.325s;
+          animation-delay: 0.325s;
+}
+.color-changing-square:nth-child(15) {
+  -webkit-animation-delay: 0.35s;
+          animation-delay: 0.35s;
+}
+.color-changing-square:nth-child(16) {
+  -webkit-animation-delay: 0.375s;
+          animation-delay: 0.375s;
+}
+.color-changing-square:nth-child(17) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+.color-changing-square:nth-child(18) {
+  -webkit-animation-delay: 0.425s;
+          animation-delay: 0.425s;
+}
+.color-changing-square:nth-child(19) {
+  -webkit-animation-delay: 0.45s;
+          animation-delay: 0.45s;
+}
+.color-changing-square:nth-child(20) {
+  -webkit-animation-delay: 0.475s;
+          animation-delay: 0.475s;
+}
+.color-changing-square:nth-child(21) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+.color-changing-square:nth-child(22) {
+  -webkit-animation-delay: 0.525s;
+          animation-delay: 0.525s;
+}
+.color-changing-square:nth-child(23) {
+  -webkit-animation-delay: 0.55s;
+          animation-delay: 0.55s;
+}
+.color-changing-square:nth-child(24) {
+  -webkit-animation-delay: 0.575s;
+          animation-delay: 0.575s;
+}
+.color-changing-square:nth-child(25) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+.big-back-text-container {
+  height: 500px;
+  width: 90%;
+  max-width: 1000px;
+  margin: 80px auto;
+  background: url("rail.jpg") no-repeat center;/*https://kccsecurity.com/wp-content/uploads/2018/01/Hipster-Wallpaper-9956.jpg*/
+  background-size: 1280px 720px;
+  overflow: hidden;
+}
+.big-back-text-container::before {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  right: 35px;
+  bottom: 35px;
+  background-color: rgba(229,233,233,0.94);
+}
+.big-back-text-container .big-back-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 90%;
+  text-align: center;
+  font-family: "Montserrat";
+  font-size: 40px;
+  line-height: 50px;
+  background: url("rail.jpg") no-repeat center;/*https://kccsecurity.com/wp-content/uploads/2018/01/Hipster-Wallpaper-9956.jpg*/
+  background-size: 1280px 720px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.footer {
+  min-height: 100px;
+  background-color: #282828;
+  box-sizing: border-box;
+  border-top: 6px solid #e78533;
+  color: #fff;
+}
+.social-buttons-container {
+  min-height: 100px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto 0;
+  text-align: center;
+}
+.social-button {
+  display: inline-block;
+  position: relative;
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
+  height: 75px;
+  width: 75px;
+  background-size: cover !important;
+  transition: 0.3s ease;
+  margin: 14px 2px;
+  cursor: pointer;
+}
+.social-button:hover {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  transition: 0.3s cubic-bezier(0.3, 0.2, 0, 2.5);
+}
+.social-button.twitter-button {
+  background: url("twitter.png") no-repeat center;/*https://cdn4.iconfinder.com/data/icons/social-icon-4/842/twitter-256.png*/
+}
+.social-button.facebook-button {
+  background: url("facebook.png") no-repeat center;/*https://cdn4.iconfinder.com/data/icons/social-icon-4/842/facebook-256.png*/
+}
+.social-button.pinterest-button {
+  background: url("pinterest.png") no-repeat center;/*https://cdn4.iconfinder.com/data/icons/social-icon-4/842/pinterest-256.png*/
+}
+.social-button.insta-button {
+  background: url("instagram.png") no-repeat center;/*https://cdn4.iconfinder.com/data/icons/social-icon-4/842/instagram-256.png*/
+}
+.footer-links-container {
+  display: flex;
+  width: 90%;
+  max-width: 950px;
+  margin: 30px auto 80px;
+  text-align: center;
+}
+.footer-links-container .footer-flex-column {
+  position: relative;
+  flex: 1 1 0;
+  text-align: center;
+  border-right: 1px solid #555;
+}
+.footer-links-container .footer-flex-column:last-child {
+  border: none;
+}
+.footer-links-container .footer-flex-column ul {
+  position: relative;
+  width: 100%;
+  max-width: 200px;
+  margin: auto;
+  color: #aaa;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.footer-links-container .footer-flex-column li {
+  display: block;
+  position: relative;
+  margin: 15px 7px;
+  color: #666;
+  text-align: center;
+  font-size: 16px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.footer-links-container .footer-flex-column li:hover {
+  color: #999;
+}
+@media screen and (max-width: 800px) {
+  .fixed-nav-bar .logo {
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .deer-section {
+    min-height: 660px;
+    background-position: right bottom;
+    background-size: 300px 425px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .social-buttons-container {
+    max-width: 200px;
+  }
+}
+@-webkit-keyframes spinnerooni {
+  0% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  7.5% {
+    -webkit-transform: rotate(-65deg);
+            transform: rotate(-65deg);
+  }
+  25% {
+    -webkit-transform: rotate(315deg);
+            transform: rotate(315deg);
+  }
+  100% {
+    -webkit-transform: rotate(315deg);
+            transform: rotate(315deg);
+  }
+}
+@keyframes spinnerooni {
+  0% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  7.5% {
+    -webkit-transform: rotate(-65deg);
+            transform: rotate(-65deg);
+  }
+  25% {
+    -webkit-transform: rotate(315deg);
+            transform: rotate(315deg);
+  }
+  100% {
+    -webkit-transform: rotate(315deg);
+            transform: rotate(315deg);
+  }
+}
+@-webkit-keyframes colorChange {
+  0% {
+    background-color: #e91e63;
+  }
+  11% {
+    background-color: #f44336;
+  }
+  22% {
+    background-color: #ff9800;
+  }
+  33% {
+    background-color: #ffeb3b;
+  }
+  44% {
+    background-color: #8bc34a;
+  }
+  55% {
+    background-color: #009688;
+  }
+  66% {
+    background-color: #00bcd4;
+  }
+  77% {
+    background-color: #2196f3;
+  }
+  88% {
+    background-color: #673ab7;
+  }
+  100% {
+    background-color: #9c27b0;
+  }
+}
+@keyframes colorChange {
+  0% {
+    background-color: #e91e63;
+  }
+  11% {
+    background-color: #f44336;
+  }
+  22% {
+    background-color: #ff9800;
+  }
+  33% {
+    background-color: #ffeb3b;
+  }
+  44% {
+    background-color: #8bc34a;
+  }
+  55% {
+    background-color: #009688;
+  }
+  66% {
+    background-color: #00bcd4;
+  }
+  77% {
+    background-color: #2196f3;
+  }
+  88% {
+    background-color: #673ab7;
+  }
+  100% {
+    background-color: #9c27b0;
+  }
+}
